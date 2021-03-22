@@ -14,7 +14,7 @@ class Quiz1Main {
     Question('Browsers can execute Dart code directly.', false),
     Question('Dart is fun.', false),
     Question('Dart is used to make building large scale apps easier.', true),
-    Question('Dart and JavaScript are the same.', true),
+    Question('Dart and JavaScript are the same.', false),
   ];
 
   void nextQuestion() {
