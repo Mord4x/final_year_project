@@ -56,18 +56,15 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.grey[200],
         appBar: AppBar(
+          backgroundColor: Colors.grey[500],
           // Here we take the value from the MyHomePage object that was created by
           // the App.build method, and use it to set our appbar title.
           title: Text("Quiz Page"),
         ),
         body: Column(
           children: <Widget>[
-            Center(
-              child: Text('Complete one of the following Quiz Types',
-                  style: TextStyle(fontSize: 18)),
-            ),
             Padding(
               padding: const EdgeInsets.only(top: 60.0),
               child: Center(
@@ -77,21 +74,32 @@ class _MyHomePageState extends State<MyHomePage> {
                     /*decoration: BoxDecoration(
                         color: Colors.red,
                         borderRadius: BorderRadius.circular(50.0)),*/
-                    child: Image.asset('asset/images/download.png')),
+                    child: Image.asset('images/quiz.png')),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 60.0),
-              child: FlatButton(
-                onPressed: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => Quizzler()));
-                },
-                child: Text(
-                  'Dart True or False Quiz',
-                  style: TextStyle(color: Colors.blueAccent, fontSize: 25),
+            Row(
+              children: [
+                SizedBox(
+                  width: 28,
                 ),
-              ),
+                Icon(
+                  Icons.menu_book_sharp,
+                  color: Colors.lightBlue,
+                ),
+                InkWell(
+                  child: FlatButton(
+                    splashColor: Colors.grey[100],
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => Quizzler()));
+                    },
+                    child: Text(
+                      'Test Your Dart Knowledge',
+                      style: TextStyle(color: Colors.black, fontSize: 25),
+                    ),
+                  ),
+                ),
+              ],
             ),
             Padding(
               //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
