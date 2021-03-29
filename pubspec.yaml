@@ -23,7 +23,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  rflutter_alert: ^1.0.2
+  rive: ^0.6.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -47,11 +48,11 @@ flutter:
 
   assets:
    - images/quiz.png
-   - images/alligator.jpg
-   - images/dog.jpg
-   - images/cat.jpg
-   - images/owl.jpg
-
+   - images/enginetype.jpg
+   - images/mazda.jpg
+   - images/carbrands.jpg
+   - images/turbo.jpg
+   - images/aku.jpg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

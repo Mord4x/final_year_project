@@ -30,4 +30,17 @@ class Quiz1Main {
   bool getQuestionAnswer() {
     return _questions[_questionNumber].questionAnswer;
   }
+
+  bool isFinished() {
+    if (_questionNumber >= _questions.length - 1) {
+      print('Now returning true');
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  void reset() {
+    _questionNumber = 0;
+  }
 }

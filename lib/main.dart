@@ -78,25 +78,21 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(
-                  width: 28,
-                ),
                 Icon(
                   Icons.menu_book_sharp,
                   color: Colors.lightBlue,
                 ),
-                InkWell(
-                  child: FlatButton(
-                    splashColor: Colors.grey[100],
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (_) => Quizzler()));
-                    },
-                    child: Text(
-                      'Test Your Dart Knowledge',
-                      style: TextStyle(color: Colors.black, fontSize: 25),
-                    ),
+                FlatButton(
+                  splashColor: Colors.grey[100],
+                  onPressed: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => Quizzler()));
+                  },
+                  child: Text(
+                    'Test Your Dart Knowledge',
+                    style: TextStyle(color: Colors.black, fontSize: 25),
                   ),
                 ),
               ],
@@ -104,15 +100,21 @@ class _MyHomePageState extends State<MyHomePage> {
             Padding(
               //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
               padding: EdgeInsets.symmetric(horizontal: 15),
-              child: FlatButton(
-                onPressed: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => Quiz2()));
-                },
-                child: Text(
-                  'MCQ Quiz',
-                  style: TextStyle(color: Colors.blueAccent, fontSize: 25),
-                ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.exit_to_app),
+                  FlatButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context, MaterialPageRoute(builder: (_) => Quiz2()));
+                    },
+                    child: Text(
+                      'MCQ Quiz',
+                      style: TextStyle(color: Colors.blueAccent, fontSize: 25),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],

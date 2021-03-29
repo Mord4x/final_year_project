@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 import 'main.dart';
 
 void main() {
@@ -21,6 +22,8 @@ class LoginDemo extends StatefulWidget {
 }
 
 class _LoginDemoState extends State<LoginDemo> {
+  TextEditingController emailController = new TextEditingController();
+  TextEditingController passwordController = new TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,17 +43,18 @@ class _LoginDemoState extends State<LoginDemo> {
                     /*decoration: BoxDecoration(
                         color: Colors.red,
                         borderRadius: BorderRadius.circular(50.0)),*/
-                    child: Image.asset('asset/images/download.png')),
+                    child: Image.asset('images/aku.jpg')),
               ),
             ),
             Padding(
               //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
               padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextField(
+                controller: emailController,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Email',
-                    hintText: 'Enter valid email id as abc@gmail.com'),
+                    hintText: 'Enter valid email hint : abc@gmail.com'),
               ),
             ),
             Padding(
@@ -58,17 +62,16 @@ class _LoginDemoState extends State<LoginDemo> {
                   left: 15.0, right: 15.0, top: 15, bottom: 0),
               //padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextField(
+                controller: passwordController,
                 obscureText: true,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Password',
-                    hintText: 'Enter secure password'),
+                    hintText: 'Enter a valid password hint : 123'),
               ),
             ),
             FlatButton(
-              onPressed: () {
-                //later place an alert
-              },
+              onPressed: () {},
               child: Text(
                 'Forgot Password',
                 style: TextStyle(color: Colors.blue, fontSize: 15),
@@ -81,8 +84,17 @@ class _LoginDemoState extends State<LoginDemo> {
                   color: Colors.blue, borderRadius: BorderRadius.circular(20)),
               child: FlatButton(
                 onPressed: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => MyHomePage()));
+                  if (emailController.text == 'abc@gmail.com' &&
+                      passwordController.text == '123') {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => MyHomePage()));
+                  } else {
+                    Alert(
+                      context: context,
+                      title: 'Error! Can\'t login !',
+                      desc: 'Check the hints to login !',
+                    ).show();
+                  }
                 },
                 child: Text(
                   'Login',

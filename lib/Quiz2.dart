@@ -2,26 +2,26 @@ import 'package:flutter/material.dart';
 
 var finalScore = 0;
 var questionNumber = 0;
-var quiz = new AnimalQuiz();
+var quiz = new EngineQuiz();
 
-class AnimalQuiz {
-  var images = ["alligator", "cat", "dog", "owl"];
+class EngineQuiz {
+  var images = ["enginetype", "mazda", "turbo", "carbrands"];
 
   var questions = [
-    "This animal is a carnivorous reptile.",
-    "_________ like to chase mice and birds.",
-    "Give a _________ a bone and he will find his way home",
-    "A nocturnal animal with some really big eyes",
+    "What Is The Most Balanced Engine Type ?",
+    "Mazda's Legacy Engine Type is :",
+    "What Does A Turbo Provide The Engine More Of :",
+    "Most Valuable Car Brand :",
   ];
 
   var choices = [
-    ["Cat", "Sheep", "Alligator", "Cow"],
-    ["Cat", "Snail", "Slug", "Horse"],
-    ["Mouse", "Dog", "Elephant", "Donkey"],
-    ["Spider", "Snake", "Hawk", "Owl"]
+    ["Inline 6", "Inline 4", "V shaped", "Boxer Engine"],
+    ["Rotary", "V4 turbo", "Inline 3", "Boxer Engine"],
+    ["Oil", "Fuel", "Air", "Coolant"],
+    ["Toyota", "Mercedes", "Honda", "BMW"],
   ];
 
-  var correctAnswers = ["Alligator", "Cat", "Dog", "Owl"];
+  var correctAnswers = ["Inline 6", "Rotary", "Air", "Toyota"];
 }
 
 class Quiz2 extends StatefulWidget {
